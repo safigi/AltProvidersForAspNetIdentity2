@@ -1,24 +1,31 @@
-﻿using Dapper;
+﻿using System.Collections.Generic;
+using Brade.AspNet.Identity.Dapper.Dapper.Stores;
 
-namespace Brade.AspNet.Identity.Dapper
+namespace Brade.AspNet.Identity.Dapper.Dapper
 {
     public class IdentityDatabase : Database<IdentityDatabase>
     {
-        public class StringTable<T> : Table<T, string>
+        public IdentityDatabase()
         {
-            public StringTable(Database<IdentityDatabase> database, string likelyTableName) : base(database, likelyTableName)
-            {
-            }
-        }
+            Roles = new Table<IdentityRole, int,List<string>>(this,"Roles",new List<string>{"Id"});
+            Users = new Table<IdentityUser, int, List<string>>(this, "Users", new List<string> { "Id" });
+            UserRoles = new Table<IdentityUserRole, int, List<string>>(this, "UserRoles", new List<string> { "Id" });
+            UserLogins = new Table<IdentityUserLogin, int, List<string>>(this, "UserLogins", new List<string> { "Id" });
+            UserClaims = new Table<IdentityUserClaim, int, List<string>>(this, "UserClaims", new List<string> { "Id" });
+        }        
+        
+        public Table<IdentityRole, int, List<string>> Roles { get; set; }
 
-        public Table<IdentityRole, string> Roles { get; set; }
+        public Table<IdentityUser, int, List<string>> Users { get; set; }
 
-        public Table<IdentityUser, string> Users { get; set; }
+        public Table<IdentityUserRole, int, List<string>> UserRoles { get; set; }
 
-        public Table<IdentityUserRole> UserRoles { get; set; }
+        public Table<IdentityUserLogin, int, List<string>> UserLogins { get; set; }
 
-        public Table<IdentityUserLogin> UserLogins { get; set; }
+        public Table<IdentityUserClaim, int, List<string>> UserClaims { get; set; }
 
-        public Table<IdentityUserClaim> UserClaims { get; set; } 
     }
+
+
 }
+

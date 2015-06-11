@@ -1,42 +1,46 @@
-﻿using System.Data.SqlClient;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
-using Brade.AspNet.Identity.Dapper;
 using Brade.AspNet.Identity.Dapper.Data;
 using Dapper;
 
-namespace Brade.AspNet.Identity
+namespace Brade.AspNet.Identity.Dapper.Dapper.Stores
 {
     public class RoleStore : IQueryableRoleStore<IdentityRole>
     {
-        public void Dispose()
+        public string ConnectionString { get; set; }
+
+        public RoleStore(string connectionString)
         {
-            throw new System.NotImplementedException();
+            ConnectionString = connectionString;
+        }
+
+        public void Dispose()
+        {            
         }
 
         public async Task CreateAsync(IdentityRole role)
         {
-            using (SqlConnection conn = new SqlConnection())
+            using (var conn = ConnectionHelper.CreateDbConnection(ConnectionString))
             {
                 var db = IdentityDatabase.Init(conn, 2);
-
+                
                 await db.Roles.InsertAsync(role);
             }
         }
 
         public async Task UpdateAsync(IdentityRole role)
         {
-            using (SqlConnection conn = new SqlConnection())
+            using (var conn = ConnectionHelper.CreateDbConnection(ConnectionString))
             {
                 var db = IdentityDatabase.Init(conn, 2);
-
+                
                 await db.Roles.UpdateAsync(role.Id, role);
             }
         }
 
         public async Task DeleteAsync(IdentityRole role)
         {
-            using (SqlConnection conn = new SqlConnection())
+            using (var conn = ConnectionHelper.CreateDbConnection(ConnectionString))
             {
                 var db = IdentityDatabase.Init(conn, 2);
 
@@ -44,30 +48,29 @@ namespace Brade.AspNet.Identity
             }
         }
 
-        public async Task<IdentityRole> FindByIdAsync(string roleId)
+        public async Task<IdentityRole> FindByIdAsync(int roleId)
         {
-            using (SqlConnection conn = new SqlConnection())
+            using (var conn = ConnectionHelper.CreateDbConnection(ConnectionString))
             {
-                return (await conn.QueryAsync<IdentityRole>(@"select * from Roles where Id=@Id", new { Id = roleId })).SingleOrDefault();
+                return (await conn.QueryAsync<IdentityRole>(@"select * from dbo.Roles where Id=@Id", new { Id = roleId })).SingleOrDefault();
             }
-        }
+        }     
 
         public async Task<IdentityRole> FindByNameAsync(string roleName)
         {
-            using (SqlConnection conn = new SqlConnection())
+            using (var conn = ConnectionHelper.CreateDbConnection(ConnectionString))
             {
-                return (await conn.QueryAsync<IdentityRole>(@"select * from Roles where Name=@Name", new { Name = roleName })).SingleOrDefault();
+                return (await conn.QueryAsync<IdentityRole>(@"select * from dbo.Roles where Name=@Name", new { Name = roleName })).SingleOrDefault();
             }
         }
-
-        private IQueryable<IdentityRole> _roles;
+      
         public IQueryable<IdentityRole> Roles
         {
             get
             {
-                using (SqlConnection conn = new SqlConnection())
+                using (var conn = ConnectionHelper.CreateDbConnection(ConnectionString))
                 {
-                    return (_roles = conn.Query<IdentityRole>(@"select * from Roles").AsQueryable());
+                    return (conn.Query<IdentityRole>(@"select * from dbo.Roles").AsQueryable());
                 }
             }
         }

@@ -3,7 +3,7 @@ using Brade.AspNet.Identity.Identity;
 
 namespace Brade.AspNet.Identity
 {
-    public interface IRoleRepository<TRole, TRoleKey> where TRole : Role<TRoleKey>
+    public interface IRoleRepository<TRole, in TRoleKey> where TRole : Role<TRoleKey>
     {
         Task CreateAsync(TRole role);
 

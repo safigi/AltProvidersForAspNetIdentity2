@@ -18,11 +18,6 @@ namespace Brade.AspNet.Identity.Identity
         public int AccessFailedCount { get; set; }
 
         public TUserKey Id { get; set; }
-        public string UserName { get; set; }
-
-        public User()
-        {
-            
-        }
+        public string UserName { get; set; }      
     }
 }

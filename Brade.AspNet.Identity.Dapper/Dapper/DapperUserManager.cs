@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Threading.Tasks;
+using Brade.AspNet.Identity.Dapper.Dapper.Stores;
 using Microsoft.AspNet.Identity;
 
 namespace Brade.AspNet.Identity.Dapper.Dapper
 {
-    public class DapperUserManager : UserManager<IdentityUser, string>
+    public class DapperUserManager : UserManager<IdentityUser, int>
     {
-        public DapperUserManager(IUserStore<IdentityUser, string> store) : base(store)
+        public DapperUserManager(IUserStore<IdentityUser, int> store) : base(store)
+        //public DapperUserManager(DapperUserStore store): base(store)
         {
         }
 

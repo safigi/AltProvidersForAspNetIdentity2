@@ -2,8 +2,8 @@
 
 namespace Brade.AspNet.Identity.Dapper.Data
 {
-    public interface IQueryableRoleStore<TRole> : IQueryableRoleStore<TRole, string> where TRole : IRole<string>
+    public interface IQueryableRoleStore<TRole> : IQueryableRoleStore<TRole, int> where TRole : IRole<int>
     {
 
-    }
+    }    
 }

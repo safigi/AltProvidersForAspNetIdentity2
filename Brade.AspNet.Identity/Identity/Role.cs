@@ -7,7 +7,5 @@ namespace Brade.AspNet.Identity.Identity
         public TRoleKey Id { get; set; }
 
         public string Name { get; set; }
-
-        public Role() { }
     }
 }

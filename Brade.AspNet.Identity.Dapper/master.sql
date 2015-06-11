@@ -9,31 +9,31 @@ GO
 
 CREATE TABLE [dbo].UserRoles (
     [Id]	 INT IDENTITY (1 ,1) NOT NULL,
-    [UserId] NVARCHAR (128) NOT NULL,
+    [UserId] int NOT NULL,
     [RoleId] INT NOT NULL
 );
 
 CREATE TABLE [dbo].UserClaims (
     [Id]         INT IDENTITY (1, 1) NOT NULL,
-    [UserId]     NVARCHAR (128) NOT NULL,
+    [UserId]     int NOT NULL,
     [ClaimType]  NVARCHAR (MAX) NULL,
     [ClaimValue] NVARCHAR (MAX) NULL
 );
 
 CREATE TABLE [dbo].UserLogins (
     [Id]			INT	IDENTITY (1, 1)  NOT NULL,
-    [UserId]        NVARCHAR (128) NOT NULL,
+    [UserId]        int NOT NULL,
     [LoginProvider] NVARCHAR (128) NOT NULL,
     [ProviderKey]   NVARCHAR (128) NOT NULL
 );
 
 CREATE TABLE [dbo].Roles (
-    [Id]   NVARCHAR (128) NOT NULL,
+    [Id]   INT	IDENTITY (1, 1)  NOT NULL,
     [Name] NVARCHAR (256) NOT NULL
 );
 
 CREATE TABLE [dbo].Users (
-    [Id]                   NVARCHAR (128) NOT NULL,
+    [Id]                   INT	IDENTITY (1, 1)  NOT NULL,
     [Email]                NVARCHAR (256) NULL,
     [EmailConfirmed]       BIT            NOT NULL,
     [PasswordHash]         NVARCHAR (MAX) NULL,

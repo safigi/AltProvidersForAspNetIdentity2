@@ -1,13 +1,8 @@
-﻿using System;
-using Brade.AspNet.Identity.Identity;
+﻿using Brade.AspNet.Identity.Identity;
 
-namespace Brade.AspNet.Identity.Dapper
+namespace Brade.AspNet.Identity.Dapper.Dapper
 {
-    public class IdentityUser : User<string>
+    public class IdentityUser : User<int>
     {
-        public IdentityUser()
-        {
-            Id = Guid.NewGuid().ToString();
-        }
     }
 }

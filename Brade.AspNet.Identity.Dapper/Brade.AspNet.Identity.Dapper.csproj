@@ -38,15 +38,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Dapper, Version=1.34.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\dapper-dot-net\Dapper NET45\bin\Debug\Dapper.dll</HintPath>
+    <Reference Include="Dapper">
+      <HintPath>..\packages\Dapper.1.42\lib\net45\Dapper.dll</HintPath>
     </Reference>
-    <Reference Include="Dapper.Rainbow">
-      <HintPath>..\..\dapper-dot-net\Dapper.Rainbow NET45\bin\Debug\Dapper.Rainbow.dll</HintPath>
-    </Reference>
-    <Reference Include="Microsoft.AspNet.Identity.Core">
-      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.1.0\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.Identity.Core.2.2.1\lib\net45\Microsoft.AspNet.Identity.Core.dll</HintPath>
+      <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Web.DynamicData" />
@@ -81,6 +78,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dapper\DapperUserManager.cs" />
+    <Compile Include="Dapper\Stores\ConnectionHelper.cs" />
+    <Compile Include="Dapper\Stores\Database.cs" />
+    <Compile Include="Dapper\Stores\DatabaseAsync.cs" />
     <Compile Include="Dapper\Stores\RoleStore.cs" />
     <Compile Include="Dapper\IdentityDatabase.cs" />
     <Compile Include="Dapper\IdentityRole.cs" />
