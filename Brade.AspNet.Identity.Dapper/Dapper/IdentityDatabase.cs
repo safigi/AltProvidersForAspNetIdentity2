@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
 using Brade.AspNet.Identity.Dapper.Dapper.Stores;
+using Brade.AspNet.Identity.Identity;
+using Safi.AspNet.Identity.Common;
 
 namespace Brade.AspNet.Identity.Dapper.Dapper
 {

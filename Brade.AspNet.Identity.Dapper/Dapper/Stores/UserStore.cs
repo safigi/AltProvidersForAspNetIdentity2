@@ -4,8 +4,10 @@ using System.Linq;
 using System.Reflection;
 using System.Security.Claims;
 using System.Threading.Tasks;
+using Brade.AspNet.Identity.Identity;
 using Dapper;
 using Microsoft.AspNet.Identity;
+using Safi.AspNet.Identity.Common;
 
 namespace Brade.AspNet.Identity.Dapper.Dapper.Stores
 {

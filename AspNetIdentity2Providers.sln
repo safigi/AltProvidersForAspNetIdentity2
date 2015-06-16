@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", 
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "TestDatabase", "TestDatabase\TestDatabase.sqlproj", "{229DC325-72F3-46CB-9960-561512F1EB00}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Safi.AspNet.Identity.Common", "Safi.AspNet.Identity.Common\Safi.AspNet.Identity.Common.csproj", "{F26B228D-9697-46F6-A73C-2EE7097B852F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{229DC325-72F3-46CB-9960-561512F1EB00}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{229DC325-72F3-46CB-9960-561512F1EB00}.Release|Any CPU.Build.0 = Release|Any CPU
 		{229DC325-72F3-46CB-9960-561512F1EB00}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{F26B228D-9697-46F6-A73C-2EE7097B852F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F26B228D-9697-46F6-A73C-2EE7097B852F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F26B228D-9697-46F6-A73C-2EE7097B852F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F26B228D-9697-46F6-A73C-2EE7097B852F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

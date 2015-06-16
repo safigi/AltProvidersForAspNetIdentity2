@@ -1,6 +1,4 @@
-﻿using Brade.AspNet.Identity.Identity;
-
-namespace Brade.AspNet.Identity.Dapper.Dapper
+﻿namespace Brade.AspNet.Identity.Identity
 {
     public class IdentityRole : Role<int>
     {

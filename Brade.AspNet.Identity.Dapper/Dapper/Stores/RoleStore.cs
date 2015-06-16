@@ -1,7 +1,8 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using Brade.AspNet.Identity.Dapper.Data;
+using Brade.AspNet.Identity.Identity;
 using Dapper;
+using Safi.AspNet.Identity.Common;
 
 namespace Brade.AspNet.Identity.Dapper.Dapper.Stores
 {

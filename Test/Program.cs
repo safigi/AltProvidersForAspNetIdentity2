@@ -1,6 +1,7 @@
 ﻿using System;
 using Brade.AspNet.Identity.Dapper.Dapper;
 using Brade.AspNet.Identity.Dapper.Dapper.Stores;
+using Brade.AspNet.Identity.Identity;
 using Microsoft.AspNet.Identity;
 
 namespace Test

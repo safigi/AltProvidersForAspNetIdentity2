@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{5ECB5043-1C2E-470C-B97C-BA92E06A61E6}</ProjectGuid>
+    <ProjectGuid>{14A21DBC-6661-4B62-A8A7-9155E87BFFB7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Brade.AspNet.Identity</RootNamespace>
-    <AssemblyName>Brade.AspNet.Identity</AssemblyName>
+    <RootNamespace>Safi.AspNet.Identity.DbProvider</RootNamespace>
+    <AssemblyName>Safi.AspNet.Identity.DbProvider</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -35,6 +36,7 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,22 +45,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Identity\IdentityRole.cs" />
-    <Compile Include="Identity\IdentityUser.cs" />
-    <Compile Include="Identity\IdentityUserClaim.cs" />
-    <Compile Include="Identity\IdentityUserLogin.cs" />
-    <Compile Include="Identity\IdentityUserRole.cs" />
-    <Compile Include="Identity\Role.cs" />
-    <Compile Include="Identity\User.cs" />
-    <Compile Include="Identity\UserClaim.cs" />
-    <Compile Include="Identity\UserLogin.cs" />
-    <Compile Include="Identity\UserRole.cs" />
-    <Compile Include="IQueryableRoleStore.cs" />
-    <Compile Include="IRoleRepository.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Brade.AspNet.Identity\Brade.AspNet.Identity.csproj">
+      <Project>{5ecb5043-1c2e-470c-b97c-ba92e06a61e6}</Project>
+      <Name>Brade.AspNet.Identity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Safi.AspNet.Identity.Common\Safi.AspNet.Identity.Common.csproj">
+      <Project>{f26b228d-9697-46f6-a73c-2ee7097b852f}</Project>
+      <Name>Safi.AspNet.Identity.Common</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

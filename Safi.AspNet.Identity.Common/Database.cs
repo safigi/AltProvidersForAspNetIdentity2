@@ -14,7 +14,7 @@ using System.Reflection.Emit;
 using System.Text;
 using Dapper;
 
-namespace Brade.AspNet.Identity.Dapper.Dapper.Stores
+namespace Safi.AspNet.Identity.Common
 {
     /// <summary>
     /// A container for a database, assumes all the tables have an Id column named Id

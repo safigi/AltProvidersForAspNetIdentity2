@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using Dapper;
 
-namespace Brade.AspNet.Identity.Dapper.Dapper.Stores
+namespace Safi.AspNet.Identity.Common
 {
     public abstract partial class Database<TDatabase> : IDisposable where TDatabase : Database<TDatabase>, new()
     {
